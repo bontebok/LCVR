@@ -31,7 +31,8 @@ namespace LCVR
 
         private readonly string[] GAME_ASSEMBLY_HASHES = [
             "AAC6149C355A19865C0F67FD0C1D7111D4F418EF94D700265B591665B4CDCE73", // V45
-            "9F7F9C7F7159628992127770CA4E294F2313CD1FB0713BFC3FD9274BA018EEC7"  // V47 -Public beta
+            "9F7F9C7F7159628992127770CA4E294F2313CD1FB0713BFC3FD9274BA018EEC7", // V47 -Public beta
+            "3EE687F8586F8597BA9E750E5C75141CA353C0076A3FC3C802AE9CE35D876580"  // V49
         ];
 
         public static new Config Config { get; private set; }
@@ -129,6 +130,7 @@ namespace LCVR
             using var hash = SHA256.Create();
             var bytes = hash.ComputeHash(File.ReadAllBytes(location));
             var shasum = BitConverter.ToString(bytes).Replace("-", "");
+            Logger.LogInfo(shasum);
 
             return GAME_ASSEMBLY_HASHES.Contains(shasum);
         }
@@ -138,7 +140,7 @@ namespace LCVR
             try
             {
                 var current = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                var deps = Path.Combine(current, "RuntimeDeps");
+                var deps = current; //Path.Combine(current, "RuntimeDeps");
 
                 foreach (var file in Directory.GetFiles(deps, "*.dll"))
                 {
@@ -338,8 +340,8 @@ namespace LCVR
             var oxrLoaderTarget = Path.Combine(plugins, "openxr_loader.dll");
 
             var current = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var uoxr = Path.Combine(current, "RuntimeDeps/UnityOpenXR.dll");
-            var oxrLoader = Path.Combine(current, "RuntimeDeps/openxr_loader.dll");
+            var uoxr = Path.Combine(current, "UnityOpenXR.dll"); //Path.Combine(current, "RuntimeDeps/UnityOpenXR.dll");
+            var oxrLoader = Path.Combine(current, "openxr_loader.dll"); //Path.Combine(current, "RuntimeDeps/openxr_loader.dll");
 
             if (!CopyResourceFile(uoxr, uoxrTarget))
                 Logger.LogWarning("Could not find UnityOpenXR.dll to copy to the game, VR might not work!");
