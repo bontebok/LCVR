@@ -1,11 +1,9 @@
-# ⚠️⚠️ NOT YET RELEASED ⚠️⚠️
-
-Be patient, the mod will release very soon! (Yes, **very** soon!)
-
 # Lethal Company VR Mod
 
+## Delayed due to arms >:(
+
 <!--
-[<img src="https://github.com/DaXcess/LCVR/blob/main/.github/assets/thunderstore-btn.png" height="80" />](https://github.com/DaXcess/LCVR#not-yet)
+[<img src="https://github.com/DaXcess/LCVR/blob/main/.github/assets/thunderstore-btn.png" height="80" />](https://thunderstore.io/c/lethal-company/p/DaXcess/LethalCompanyVR)
 [<img src="https://github.com/DaXcess/LCVR/blob/main/.github/assets/github-btn.png" height="80" />](https://github.com/DaXcess/LCVR/releases/latest)
 <br/>
 -->
@@ -15,6 +13,12 @@ LCVR is a [BepInEx](https://docs.bepinex.dev/) mod that adds full 6DOF VR suppor
 The mod is powered by Unity's OpenXR plugin and is thereby compatible with a wide range of headsets, controllers and runtimes, like Oculus, Virtual Desktop, SteamVR and many more!
 
 LCVR is compatible with multiplayer and works seamlessly with VR players and Non-VR players in the same lobby. Running this mod without having a VR headset will allow you to see the arm and head movements of any VR players in the same lobby, all while still being compatible with vanilla clients (even if the host is using no mods at all).
+
+### Discord Server
+
+Facing issues, have some mod (in)compatibility to report or just want to hang out?
+
+You can join the [LCVR Discord Server](https://discord.gg/2DxNgpPZUF)!
 
 # Compatibility
 
